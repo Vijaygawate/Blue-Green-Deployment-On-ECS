@@ -1,19 +1,11 @@
 {
   "ipcMode": null,
-  "executionRoleArn": "arn:aws:iam::711610755347:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::281290702866:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
       "dnsSearchDomains": null,
       "environmentFiles": null,
-      "logConfiguration": {
-        "logDriver": "awslogs",
-        "secretOptions": null,
-        "options": {
-          "awslogs-group": "/ecs/ecs-blue-green-cluster",
-          "awslogs-region": "us-east-1",
-          "awslogs-stream-prefix": "ecs"
-        }
-      },
+      "logConfiguration": null,
       "entryPoint": null,
       "portMappings": [
         {
@@ -37,7 +29,7 @@
       "memoryReservation": 128,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "<ImageURI>",
+      "image": "ImageURI",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -54,31 +46,19 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "ecs-blue-green-container"
+      "name": "bluegreencontainer"
     }
   ],
   "placementConstraints": [],
   "memory": "512",
-  "taskRoleArn": null,
+  "taskRoleArn": "arn:aws:iam::281290702866:role/ecsTaskExecutionRole",
   "compatibilities": [
     "EC2",
     "FARGATE"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-1:711610755347:task-definition/ecs-blue-green-cluster:1",
-  "family": "ecs-blue-green-cluster",
+  "taskDefinitionArn": "arn:aws:ecs:ap-south-1:281290702866:task-definition/bluegreen-taskdef:2",
+  "family": "bluegreen-taskdef",
   "requiresAttributes": [
-    {
-      "targetId": null,
-      "targetType": null,
-      "value": null,
-      "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
-    },
-    {
-      "targetId": null,
-      "targetType": null,
-      "value": null,
-      "name": "ecs.capability.execution-role-awslogs"
-    },
     {
       "targetId": null,
       "targetType": null,
@@ -89,13 +69,13 @@
       "targetId": null,
       "targetType": null,
       "value": null,
-      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
     },
     {
       "targetId": null,
       "targetType": null,
       "value": null,
-      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+      "name": "com.amazonaws.ecs.capability.task-iam-role"
     },
     {
       "targetId": null,
@@ -126,7 +106,7 @@
     "cpuArchitecture": null
   },
   "cpu": "256",
-  "revision": 1,
+  "revision": 2,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
