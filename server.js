@@ -12,14 +12,14 @@ const express = require('express');
 const PORT = 8080;
 const HOST = '0.0.0.0';
 const OS = require('os');
-const ENV = 'DEV';
+const ENV = 'Production';
 
 
 // App
 const app = express();
 app.get('/', (req, res) => {
   res.statusCode = 200;
-  const msg = 'Hello from blue green deployment version1121 by sahoo!';
+  const msg = 'Hello from blue green deployment version:v1.1 by Vijay!';
   res.send(getPage(msg));
 });
 
